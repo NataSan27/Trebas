@@ -1,0 +1,44 @@
+import java.util.Scanner;
+public class Degree_of_freedom {
+    public static void main(String[] args)
+    {
+        Scanner results = new Scanner(System.in);
+
+        // Values provided
+        System.out.print("Enter the number of females who deposit: ");
+        int NumFemaleDeposit = results.nextInt();
+        System.out.println("Enter the number of females who litter: ");
+        int NumFemalelitter = results.nextInt();
+        System.out.print("Enter the number of males who deposit: ");
+        int NumMaleDeposit = results.nextInt();
+        System.out.print("Enter the number of males who litter: ");
+        int NumMalelitter = results.nextInt();
+
+         // Calculate the number of men and women who do not deposit and litter
+        int NoDeposit = NumMaleDeposit + NumFemaleDeposit;
+        int NoLitter = NumMalelitter + NumFemalelitter;
+        int femaleNoDeposit = NoDeposit * 25/100;
+        int femaleNoLitter = (NoLitter * 25/100);
+        int maleNoDeposit = NoDeposit * 75/100;
+        int maleNoLitter = NoLitter * 75/100;
+
+        // Output the results
+        System.out.println("Number of females who do not deposit: " + femaleNoDeposit);
+        System.out.println("Number of females who do not litter: " + femaleNoLitter);
+        System.out.println("Number of males who do not deposit: " + maleNoDeposit);
+        System.out.println("Number of males who do not litter: " + maleNoLitter);
+
+        // Check if there is a significant difference in littering behavior between men and women
+        int totalNoLitter = femaleNoLitter + maleNoLitter;
+        int femaleNoLitterPercentage = (int) Math.round((double) femaleNoLitter / totalNoLitter * 100);
+        int maleNoLitterPercentage = (int) Math.round((double) maleNoLitter / totalNoLitter * 100);
+
+        if (Math.abs(femaleNoLitterPercentage - maleNoLitterPercentage) >= 10) {
+            System.out.println("There is a significant difference in littering behavior between men and women.");
+        }
+        else
+        {
+            System.out.println("There is no significant difference in littering behavior between men and women.");
+        }
+    }
+}
