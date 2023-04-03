@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+class side{
+    int s;
+    public void ares(int a)
+    {
+        s= a * a;
+        System.out.println("The area of your squares is:"+s);
+    }
+    public void peri(int a)
+    {
+        s= 4 * a;
+        System.out.println("The perimeter of your squares is:"+s);
+    }
+}
+
+public class Square extends side {
+        public static void main(String [] args){
+            int s, a;
+
+            Scanner Side = new Scanner(System.in);
+            System.out.println("Enter the square side value:");
+            s = Side.nextInt();
+            Square myobj = new Square();
+            myobj.ares(s);
+            myobj.peri(s);
+
+    }
+}
