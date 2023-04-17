@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class YTM {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the Interest Payment yearly: ");
+        double IP = scanner.nextDouble();
+
+        System.out.print("Enter the Face Value of the bond: ");
+        double faceValue = scanner.nextDouble();
+
+        System.out.print("Enter the current market price: ");
+        double marketPrice = scanner.nextDouble();
+
+        System.out.print("Enter the number of years to maturity: ");
+        int yearsToMaturity = scanner.nextInt();
+
+        double yieldToMaturity = (IP + (faceValue - marketPrice) / yearsToMaturity) / ((faceValue + marketPrice) / 2);
+
+        System.out.printf("The yield to maturity is %.2f%%", yieldToMaturity * 100);
+    }
+}
