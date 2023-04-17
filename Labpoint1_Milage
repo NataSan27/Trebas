@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+class Car{
+    int OD1;
+    int OD2;
+    int Fuel;
+    String M1;
+    int FuelT;
+
+    public void OdometerReader() {
+
+        Scanner Odometer = new Scanner(System.in);
+        System.out.println("Enter the new Odemeter value:");
+        OD1 = Odometer.nextInt();
+        System.out.println("Enter the preview Odemeter value:");
+        OD2 = Odometer.nextInt();
+
+    }
+    public void Fuel() {
+        Scanner Gas = new Scanner(System.in);
+        System.out.println("Enter the fuel added to the tank in litres:");
+        Fuel = Gas.nextInt();
+    }
+
+}
+public class LabP1 extends Car {
+    public static void main(String[] args) {
+        LabP1 car = new LabP1();
+        car.OdometerReader();
+        car.Fuel();
+        int distance = car.OD1 - car.OD2;
+        double millage = distance / car.Fuel;
+        System.out.println("Mileage of the car: " + millage + " km/l");
+    }
+}
