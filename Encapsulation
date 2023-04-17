@@ -1,0 +1,81 @@
+class Employee {
+    private int empno;
+    private String name;
+    private double salary;
+
+    public int getempno ()
+    {
+        return empno;
+    }
+    public String getname ()
+    {
+        return name;
+    }
+    public double getsalary()
+    {
+        return salary;
+    }
+    public void setempno (int a)
+    {
+        empno=a;
+    }
+    public void setname (String b)
+    {
+        name=b;
+    }
+    public void setsalary (double c)
+    {
+        this.salary=c;
+    }
+}
+class Project { //class code created
+    private int projectId;
+    private String projectName;
+    private String projectManager;
+
+    public int getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(int projectId) {
+        this.projectId = projectId;
+    }
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    public String getProjectManager() {
+        return projectManager;
+    }
+
+    public void setProjectManager(String projectManager) {
+        this.projectManager = projectManager;
+    }
+}
+public class Encapsulation {
+    public static void main (String args[])
+    {
+        Employee emp1= new Employee ();
+        emp1.setempno(52145);
+        emp1.setname("Jhon");
+        emp1.setsalary(100000);
+        System.out.println("Employee No:"+emp1.getempno()+"\tEmployee Name:"+emp1.getname () + "Employee salary:" +emp1.getsalary());
+        Employee emp2= new Employee ();
+        emp2.setempno(65214);
+        emp2.setname("David");
+        emp2.setsalary(250000);
+        System.out.println("Employee No:"+emp2.getempno()+"\tEmployee Name:"+emp2.getname() + "Employee salary:" +emp2.getsalary());
+
+        Project proj1 = new Project();
+        proj1.setProjectId(1);
+        proj1.setProjectName("Project A");
+        proj1.setProjectManager("Bob");
+        System.out.println("Project ID: " + proj1.getProjectId() + "\tProject Name:"+proj1.getProjectName() +"\tProject Manager"+proj1.getProjectManager());
+
+    }
+}
