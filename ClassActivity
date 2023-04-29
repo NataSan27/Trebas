@@ -1,0 +1,37 @@
+class Employee():
+    def __init__(self, name):
+        self.name = name
+    def calculate_salary(self, hours, rate):
+        return hours * rate
+
+class Experiencesalary (Employee):
+    def __init__(self, name, experience):
+        self.experience = experience
+        super().__init__(name)
+
+    def calculate_salary(self, hours, rate):
+        base_salary = super().calculate_salary(hours, rate)
+        if self.experience < 8:
+            return base_salary
+        elif self.experience > 15:
+            bonus = base_salary * 0.05
+            return base_salary + bonus
+        else:
+            return base_salary
+
+name = input("Enter the employee name: ")
+hours = float(input("Enter the hours worked: "))
+rate = float(input("Enter hourly rate: "))
+
+experience = float(input("Enter years of experience: "))
+employee = Experiencesalary(name, experience)
+
+
+salary = employee.calculate_salary(hours, rate)
+if experience < 8:
+    print(f"{employee.name}'s salary with {experience} years of experience is: ${salary:.2f} (base salary)")
+elif experience > 15:
+    print(f"{employee.name}'s salary with {experience} years of experience is: ${salary:.2f} (base salary + 5% bonus)")
+else:
+    print(f"{employee.name}'s salary with {experience} years of experience is: ${salary:.2f}")
+    
